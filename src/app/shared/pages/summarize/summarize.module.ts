@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SummarizeRoutingModule } from './summarize-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [],
@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SummarizeRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+
+
   ]
 })
 export class SummarizeModule { }

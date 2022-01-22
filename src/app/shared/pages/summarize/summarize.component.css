@@ -17,7 +17,27 @@
   padding-top: 30px;
   font-size: 30px;
 }
+.minmax {
+  color: #5c5c5c;
+}
+.summerized {
+  color: #5c5c5c;
+}
+mat-spinner {
+  margin: 0 auto;
+}
 
+.files img {
+  width: 200px;
+  padding: 20px 0;
+  cursor: pointer;
+}
+.files span {
+  font-size: 20px;
+}
+.files input {
+  display: none;
+}
 .submitBtn {
   font-size: 16px;
   background-image: linear-gradient(to right, #ff7854 0, #ff5079 100%);

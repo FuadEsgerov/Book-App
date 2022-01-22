@@ -10,7 +10,10 @@ import { CoreService } from 'src/app/services/core.service';
 export class SummarizeComponent implements OnInit {
   form!: FormGroup;
   formHasValueChanges = false;
+  text = true;
   resizeText!: string;
+  file: File;
+  isLoading = false;
   constructor(
     private formBuilder: FormBuilder,
     private coreService: CoreService
@@ -20,11 +23,13 @@ export class SummarizeComponent implements OnInit {
         null,
         [
           Validators.required,
-          Validators.minLength(3),
-          Validators.maxLength(2000),
+          Validators.minLength(300),
+          Validators.maxLength(5000),
         ],
       ],
+      files: [null],
     });
+
     this.form.valueChanges.subscribe((val) => {
       this.formHasValueChanges = true;
     });
@@ -38,10 +43,51 @@ export class SummarizeComponent implements OnInit {
   }
   ngOnInit(): void {}
   post(): void {
-        // request
+    if (this.form.valid) {
+      // request
+      this.isLoading = true;
+      this.coreService.textSummarizeQuill(this.form.value.text, (res: any) => {
+        this.formHasValueChanges = false;
+        this.isLoading = false;
+        this.resizeText = res;
+      });
+    }
+  }
+  filePost(): void {
+    this.isLoading = true;
     this.coreService.textSummarizeQuill(this.form.value.text, (res: any) => {
-    this.formHasValueChanges = false;
-    this.resizeText = res;
+      this.formHasValueChanges = false;
+      this.isLoading = false;
+      this.resizeText = res;
     });
   }
+  handleFileInput(event: any): void {
+    if (event.target.files) {
+      Array.from(event.target.files).forEach((f: any) => {
+        const file: File = {
+          src: URL.createObjectURL(f),
+          file: f,
+          name: f.name,
+          type: f.name.split('.').pop(),
+        };
+        this.file = file;
+      });
+    }
+  }
+  clearText(): void {
+    // Clear Text
+    this.form.get('text').setValue(null);
+  }
+  toText(): void {
+    this.text = !this.text;
+  }
+  toFile(): void {
+    this.text = !this.text;
+  }
+}
+export interface File {
+  src: string;
+  file?: any;
+  name: string;
+  type: string;
 }

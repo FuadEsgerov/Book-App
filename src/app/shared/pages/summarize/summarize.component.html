@@ -1,27 +1,75 @@
 <form [formGroup]="form">
   <div class="container">
     <div class="row">
-      <div class="title col-12 d-flex justify-content-center">
+      <div class="title col-12">
         <h1>
           Go to the main ideas in your texts, summarize them « relevantly » in 1
           Click
         </h1>
+
+        <button class="btn submitBtn mx-3" (click)="toText()">Text</button>
+        <button class="btn submitBtn" (click)="toFile()">File</button>
       </div>
-      <div class="col-lg-6 col-md-12 col-sm-12 col-12 mb-5">
+      <div *ngIf="text" class="col-lg-6 col-md-12 col-sm-12 col-12 mb-5">
         <div pb="24px">
-          <textarea class="area" formControlName="text"></textarea>
+          <span class="minmax"
+            >Minimum 300 characters & Maximum 5000 characters</span
+          >
+          <textarea
+            placeholder="Copy and paste here your argumentative text."
+            class="area"
+            formControlName="text"
+          ></textarea>
 
           <div class="col-12 d-flex justify-content-between">
             <!-- <span class="maximum">Maximum 2000 characters</span> -->
-            <button class="btn submitBtn" (click)="post()">Submit</button>
+            <button class="btn submitBtn" (click)="clearText()">
+              Reset Text
+            </button>
+            <button
+              [disabled]="!this.form.valid"
+              class="btn submitBtn"
+              (click)="post()"
+            >
+              Summarize
+            </button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!text" class="col-lg-6 col-md-12 col-sm-12 col-12 mb-5">
+        <div pb="24px">
+          <label class="files" for="files">
+            <img src="assets/img/adobe.png" alt="pdf" />
+            <span>{{ file?.name }}</span>
+            <input
+              type="file"
+              accept="application/pdf"
+              name="files"
+              id="files"
+              formControlName="files"
+              (change)="handleFileInput($event)"
+            />
+          </label>
+
+          <div class="col-12 d-flex justify-content-between">
+            <!-- <span class="maximum">Maximum 2000 characters</span> -->
+            <button
+              [disabled]="!file"
+              class="btn submitBtn"
+              (click)="filePost()"
+            >
+              Summarize
+            </button>
           </div>
         </div>
       </div>
       <div class="col-lg-6 col-md-12 col-sm-12 col-12">
         <div pb="24px">
+          <span class="summerized">Summerized</span>
           <textarea class="area">{{ resizeText }}</textarea>
         </div>
       </div>
     </div>
   </div>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
 </form>

@@ -25,6 +25,5 @@ input:focus-visible {
   outline: none;
 }
 mat-sidenav-content {
-  height: 100vh;
   overflow: inherit;
 }

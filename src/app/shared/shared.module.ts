@@ -16,6 +16,7 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { SummarizeComponent } from './pages/summarize/summarize.component';
 import { ServicesComponent } from './pages/services/services.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ServicesComponent } from './pages/services/services.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    SharedRoutingModule
+    SharedRoutingModule,
+    MatProgressSpinnerModule
 
   ]
 })
