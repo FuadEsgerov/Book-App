@@ -7,17 +7,7 @@
       </button>
       <span>Poçt Qutusu</span>
       <span class="menu-spacer"></span>
-      <form class="example-form">
-        <input type="text"
-               placeholder="Search for a street"
-               [formControl]="control"
-               [matAutocomplete]="auto">
-        <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let street of filteredStreets | async" [value]="street">
-            {{street}}
-          </mat-option>
-        </mat-autocomplete>
-      </form>
+
       <div fxShow="true" fxHide.lt-md>
 
         <!-- The following menu items will be hidden on both SM and XS screen sizes -->
@@ -43,8 +33,10 @@
         <a href="#" mat-list-item>Paper</a>
       </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content fxFlexFill>
-      <router-outlet></router-outlet>
+    <mat-sidenav-content >
+      <div holder="router-outlet">
+        <router-outlet></router-outlet>
+    </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
