@@ -1,13 +1,13 @@
 .menu-spacer {
   flex: 1 1 auto;
 }
-img{
+img {
   width: 24px;
 }
 .mat-toolbar.mat-primary {
-  background-image: linear-gradient(to right,#ff7854 0,#ff5079 100%);
+  background-image: linear-gradient(to right, #ff7854 0, #ff5079 100%);
 }
-mat-sidenav{
+mat-sidenav {
   width: 200px;
 }
 a:hover {
@@ -21,10 +21,10 @@ input {
   border-radius: 20px;
   width: 300px;
 }
-input:focus-visible{
+input:focus-visible {
   outline: none;
 }
-mat-sidenav-content{
+mat-sidenav-content {
   height: 100vh;
   overflow: inherit;
 }

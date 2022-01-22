@@ -1,7 +1,7 @@
-.carousel-inner{
+.carousel-inner {
   height: 250px;
 }
-.carousel-item{
+.carousel-item {
   height: 250px;
 }
 input {
@@ -12,17 +12,17 @@ input {
   border-radius: 20px;
   width: 500px;
 }
-input:focus-visible{
+input:focus-visible {
   outline: none;
 }
-.search{
+.search {
   margin-top: 80px;
 }
-.search h2{
+.search h2 {
   display: flex;
   justify-content: center;
 }
-.search .search-form{
+.search .search-form {
   display: flex;
   justify-content: center;
 }
