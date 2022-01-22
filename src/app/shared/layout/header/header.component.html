@@ -5,32 +5,33 @@
       <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
         <mat-icon>menu</mat-icon>
       </button>
+      <img src="assets/img/icon-01-01.svg" alt="icon" >
       <span>Poçt Qutusu</span>
       <span class="menu-spacer"></span>
 
       <div fxShow="true" fxHide.lt-md>
 
         <!-- The following menu items will be hidden on both SM and XS screen sizes -->
-        <a href="#" mat-button>Home</a>
-        <a href="/books" mat-button>Books</a>
-        <a href="/articles" mat-button>Articles</a>
-        <a href="/blogs" mat-button>Video Blogs</a>
-        <a href="/news" mat-button>News</a>
-        <a href="/paper" mat-button>Paper</a>
+        <a [routerLink]="['/home']" mat-button>Home</a>
+        <a [routerLink]="['/summarize']" mat-button>Summarize</a>
+        <a [routerLink]="['/services']" mat-button>Services</a>
+        <a [routerLink]="" mat-button>Video Blogs</a>
+        <a [routerLink]="" mat-button>News</a>
+        <a [routerLink]="" mat-button>Paper</a>
       </div>
     </mat-toolbar-row>
   </mat-toolbar>
 
-  <mat-sidenav-container fxFlexFill>
+  <mat-sidenav-container >
     <mat-sidenav #sidenav>
       <mat-nav-list>
         <a (click)="sidenav.toggle()" mat-list-item>Close</a>
-        <a href="#" mat-list-item>Home</a>
-        <a href="#" mat-list-item>Books</a>
-        <a href="#" mat-list-item>Articles</a>
-        <a href="#" mat-list-item>Video Blog</a>
-        <a href="#" mat-list-item>News</a>
-        <a href="#" mat-list-item>Paper</a>
+        <a [routerLink]="['/home']" mat-list-item>Home</a>
+        <a [routerLink]="['/summarize']" mat-list-item>Summarize</a>
+        <a [routerLink]="['/services']" mat-list-item>Services</a>
+        <a [routerLink]="" mat-list-item>Video Blog</a>
+        <a [routerLink]="" mat-list-item>News</a>
+        <a [routerLink]="" mat-list-item>Paper</a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content >

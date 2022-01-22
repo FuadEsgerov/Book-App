@@ -1,0 +1,10 @@
+.title{
+  text-align: center;
+}
+.service{
+  width: 500px;
+  height: 100px;
+  border: 1px solid rgb(109, 109, 109);
+  margin-bottom: 15px;
+  border-radius: 20px;
+}

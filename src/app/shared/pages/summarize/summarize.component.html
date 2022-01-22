@@ -1,0 +1,27 @@
+<form [formGroup]="form">
+  <div class="container">
+    <div class="row">
+      <div class="title col-12 d-flex justify-content-center">
+        <h1>
+          Go to the main ideas in your texts, summarize them « relevantly » in 1
+          Click
+        </h1>
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12 col-12 mb-5">
+        <div pb="24px">
+          <textarea class="area" formControlName="text"></textarea>
+
+          <div class="col-12 d-flex justify-content-between">
+            <!-- <span class="maximum">Maximum 2000 characters</span> -->
+            <button class="btn submitBtn" (click)="post()">Submit</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+        <div pb="24px">
+          <textarea class="area">{{ resizeText }}</textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

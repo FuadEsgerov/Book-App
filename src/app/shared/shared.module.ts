@@ -14,11 +14,15 @@ import {MatInputModule } from '@angular/material/input';
 import { SharedComponent } from './shared.component';
 import { SharedRoutingModule } from './shared-routing.module';
 import { HomeComponent } from './pages/home/home.component';
+import { SummarizeComponent } from './pages/summarize/summarize.component';
+import { ServicesComponent } from './pages/services/services.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    SharedComponent
+    SharedComponent,
+    SummarizeComponent,
+    ServicesComponent
   ],
   imports: [
     CommonModule,

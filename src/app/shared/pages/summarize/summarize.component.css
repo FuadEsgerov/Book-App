@@ -1,0 +1,28 @@
+.area {
+  border: 1px solid #e1e4e8;
+  border-radius: 4px;
+  width: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 22px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1e2f42;
+  outline: none;
+  height: 264px;
+}
+.title {
+  padding-top: 30px;
+  font-size: 30px;
+}
+
+.submitBtn {
+  font-size: 16px;
+  background-image: linear-gradient(to right, #ff7854 0, #ff5079 100%);
+  padding: 5px 15px;
+  text-decoration: none;
+  border: none !important;
+  color: white;
+}
