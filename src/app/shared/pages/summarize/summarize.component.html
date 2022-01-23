@@ -7,19 +7,48 @@
           Click
         </h1>
 
-        <button class="btn submitBtn mx-3" (click)="toText()">Text</button>
-        <button class="btn submitBtn" (click)="toFile()">File</button>
+        <button class="btn submitBtn mx-3" (click)="toText()">
+          Text or File
+        </button>
       </div>
       <div *ngIf="text" class="col-lg-6 col-md-12 col-sm-12 col-12 mb-5">
         <div pb="24px">
           <span class="minmax"
-            >Minimum 300 characters & Maximum 5000 characters</span
+            >Minimum 10 characters & Maximum 5000 characters</span
           >
           <textarea
-            placeholder="Copy and paste here your argumentative text."
+            placeholder="Copy and paste here your argumentative text or the URL of your article."
             class="area"
             formControlName="text"
           ></textarea>
+          <div>
+            <div class="row">
+              <div class="col-3">
+                <p>Sentences</p>
+              </div>
+              <div class="col-9">
+                <input
+                  class="limitInput"
+                  type="number"
+                  (ngModelChange)="sentenceLimit($event)"
+                  formControlName="sentenceLimit"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <p>Limit</p>
+              </div>
+              <div class="col-9">
+                <input
+                  class="limitInput"
+                  type="number"
+                  (ngModelChange)="percentLimit($event)"
+                  formControlName="percentLimit"
+                />
+              </div>
+            </div>
+          </div>
 
           <div class="col-12 d-flex justify-content-between">
             <!-- <span class="maximum">Maximum 2000 characters</span> -->
@@ -39,7 +68,7 @@
       <div *ngIf="!text" class="col-lg-6 col-md-12 col-sm-12 col-12 mb-5">
         <div pb="24px">
           <label class="files" for="files">
-            <img src="assets/img/adobe.png" alt="pdf" />
+            <img src="/assets/img/adobe.png" alt="pdf" />
             <span>{{ file?.name }}</span>
             <input
               type="file"
@@ -50,6 +79,19 @@
               (change)="handleFileInput($event)"
             />
           </label>
+          <div class="row">
+            <div class="col-3">
+              <p>Limit</p>
+            </div>
+            <div class="col-9">
+              <input
+                class="limitInput"
+                type="number"
+                (ngModelChange)="percentLimit($event)"
+                formControlName="percentLimit"
+              />
+            </div>
+          </div>
 
           <div class="col-12 d-flex justify-content-between">
             <!-- <span class="maximum">Maximum 2000 characters</span> -->

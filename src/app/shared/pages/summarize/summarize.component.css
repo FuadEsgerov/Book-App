@@ -13,6 +13,24 @@
   outline: none;
   height: 264px;
 }
+.limitInput {
+  border: 1px solid #e1e4e8;
+  border-radius: 4px;
+  width: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1e2f42;
+  outline: none;
+}
+.unvisible {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}
 .title {
   padding-top: 30px;
   font-size: 30px;
@@ -45,4 +63,10 @@ mat-spinner {
   text-decoration: none;
   border: none !important;
   color: white;
+}
+.size {
+  margin-left: 10px;
+}
+.limit {
+  display: inline;
 }

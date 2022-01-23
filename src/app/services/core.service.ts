@@ -26,16 +26,30 @@ export class CoreService {
       }
     );
   }
-  textSummarizeQuill(
+  textSummarizeFile(
     body: any,
+    size:any,
 
     responseCallback: (response: any) => void
   ): void {
-    const options = {responseType: 'text' as any };
     this.httpClient.post<any>(
-      environment.server.api.getFullUrl('summarize/quill'),
-      body,
-      options
+      environment.server.api.getFullUrl(`summarize/external/file?limit=LIMIT&size=${size}`),
+      body
+
+    ).subscribe(
+      (response) => {
+        responseCallback(response);
+      }
+    );
+  }
+  textSummarizeMeaning(
+    body: any,
+    responseCallback: (response: any) => void
+  ): void {
+
+    this.httpClient.post<any>(
+      environment.server.api.getFullUrl('summarize/external'),
+      body
 
     ).subscribe(
       (response) => {
