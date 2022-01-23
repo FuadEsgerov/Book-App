@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 import { CoreService } from 'src/app/services/core.service';
 
 @Component({
