@@ -3,28 +3,27 @@
     <div class="row">
       <div class="title col-12">
         <h1>
-          Go to the main ideas in your texts, summarize them « relevantly » in 1
-          Click
+          Mətnlərinizdəki əsas fikirlərə keçin, onları 1 kliklə «müvafiq olaraq» xülasəsini yarat
         </h1>
 
-        <button class="btn submitBtn mx-3" (click)="toText()">
-          Text or File
+        <button class="btn submitBtn" (click)="toText()">
+         Mətn və ya Fayl
         </button>
       </div>
       <div *ngIf="text" class="col-lg-6 col-md-12 col-sm-12 col-12 mb-5">
         <div pb="24px">
           <span class="minmax"
-            >Minimum 10 characters & Maximum 5000 characters</span
+            >Minimum 10 simvol & Maximum 5000 simvol</span
           >
           <textarea
-            placeholder="Copy and paste here your argumentative text or the URL of your article."
+            placeholder="Mətninizi və ya məqalənizin URL-ni kopyalayıb buraya yapışdırın."
             class="area"
             formControlName="text"
           ></textarea>
           <div>
             <div class="row">
               <div class="col-3">
-                <p>Sentences</p>
+                <p>Cümləyə görə</p>
               </div>
               <div class="col-9">
                 <input
@@ -37,7 +36,7 @@
             </div>
             <div class="row">
               <div class="col-3">
-                <p>Limit</p>
+                <p>Faizə görə</p>
               </div>
               <div class="col-9">
                 <input
@@ -53,14 +52,14 @@
           <div class="col-12 d-flex justify-content-between">
             <!-- <span class="maximum">Maximum 2000 characters</span> -->
             <button class="btn submitBtn" (click)="clearText()">
-              Reset Text
+              Mətni yenilə
             </button>
             <button
               [disabled]="!this.form.valid"
               class="btn submitBtn"
               (click)="post()"
             >
-              Summarize
+              Xülasə et
             </button>
           </div>
         </div>
@@ -81,7 +80,7 @@
           </label>
           <div class="row">
             <div class="col-3">
-              <p>Limit</p>
+              <p>Faizə görə</p>
             </div>
             <div class="col-9">
               <input
@@ -100,14 +99,14 @@
               class="btn submitBtn"
               (click)="filePost()"
             >
-              Summarize
+              Xülasə et
             </button>
           </div>
         </div>
       </div>
       <div class="col-lg-6 col-md-12 col-sm-12 col-12">
         <div pb="24px">
-          <span class="summerized">Summerized</span>
+          <span class="summerized">Xülasə</span>
           <textarea class="area">{{ resizeText }}</textarea>
         </div>
       </div>
