@@ -15,6 +15,8 @@ export class SummarizeComponent implements OnInit {
   inputFormat!: string;
   resizeText!: string;
   limitFormat!: string;
+  firstCount!: any;
+  count!: any;
   currentlyDisabled: string;
   file: File;
   isLoading = false;
@@ -91,9 +93,15 @@ export class SummarizeComponent implements OnInit {
       delete this.form.value.files;
       this.isLoading = true;
       this.coreService.textSummarizeMeaning(this.form.value, (res: any) => {
+        this.coreService.charCount(this.form.value ,(res: any) => {
+          this.firstCount = res;
+        })
         this.formHasValueChanges = false;
         this.isLoading = false;
         this.resizeText = res.summary;
+        this.coreService.charCount(this.resizeText ,(res: any) => {
+          this.count = res;
+        })
       });
     }
   }
@@ -109,6 +117,9 @@ export class SummarizeComponent implements OnInit {
         this.isLoading = false;
         this.resizeText = res.summary;
         this.body.delete('file');
+         this.coreService.charCount(this.resizeText ,(res: any) => {
+           this.count = res;
+         })
       }
     );
   }

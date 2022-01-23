@@ -57,6 +57,23 @@ export class CoreService {
       }
     );
   }
+  charCount(
+    body: any,
+
+    responseCallback: (response: any) => void
+  ): void {
+    const options = {responseType: 'text' as any };
+    this.httpClient.post<any>(
+      environment.server.api.getFullUrl('summarize/char-count'),
+      body,
+      options
+
+    ).subscribe(
+      (response) => {
+        responseCallback(response);
+      }
+    );
+  }
 
 
 }

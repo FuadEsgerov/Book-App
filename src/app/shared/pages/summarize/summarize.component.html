@@ -20,6 +20,8 @@
             class="area"
             formControlName="text"
           ></textarea>
+          <span *ngIf="firstCount" class="minmax"
+          >{{firstCount}}</span>
           <div>
             <div class="row">
               <div class="col-3">
@@ -108,6 +110,9 @@
         <div pb="24px">
           <span class="summerized">Xülasə</span>
           <textarea class="area">{{ resizeText }}</textarea>
+          <span *ngIf="count" class="minmax"
+          >{{count}}</span
+        >
         </div>
       </div>
     </div>
