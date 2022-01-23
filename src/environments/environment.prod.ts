@@ -2,7 +2,7 @@ export const environment = {
   production: true,
   server: {
     api: {
-      baseUrl: 'http://192.168.43.47:8481',
+      baseUrl: 'https://enigma-azercellhackathon.herokuapp.com',
       getFullUrl: (url: string) => {
         return `${environment.server.api.baseUrl}/api/${url}`;
       },
