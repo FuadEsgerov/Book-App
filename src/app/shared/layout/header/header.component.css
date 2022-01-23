@@ -3,6 +3,7 @@
 }
 img {
   width: 24px;
+  margin-right:5px ;
 }
 .mat-toolbar.mat-primary {
   background-image: linear-gradient(to right, #ff7854 0, #ff5079 100%);
